@@ -1,0 +1,5 @@
+#!/bin/bash
+python3 -m py_compile "$PYFILE"
+name_file="$PYFILE"c
+echo "Compiling $name_file ..."
+rm -rf __pycache__
