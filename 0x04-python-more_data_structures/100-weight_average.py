@@ -3,7 +3,13 @@ def weight_average(my_list=[]):
     if my_list == 0:
         return 0
 
-    mutiplied = sum(x * y for x, y in my_list)
-    added = sum(j[1] for j in my_list)
-    average_w = mutiplied / added
+    sum_multiple = 0
+    sum_added = 0
+
+    for x, y in my_list:
+        sum_multiple += x * y
+
+    for j in my_list:
+        sum_added += j[1]
+    average_w = sum_multiple / sum_added
     return average_w
