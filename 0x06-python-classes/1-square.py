@@ -6,8 +6,7 @@ class Square:
     """"self initializing"""
 
     def __init__(self, size):
-        self.size = size
-        pass
+        self.__size = size
 
 
 """"closed the square class size"""
