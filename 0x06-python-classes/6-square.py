@@ -24,6 +24,8 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
+    """private position instance property"""
+
     @property
     def position(self):
         return self.__position
