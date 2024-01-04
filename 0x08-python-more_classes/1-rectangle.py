@@ -6,12 +6,12 @@ class Rectangle:
     """instanciating a class"""
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """width property"""
+        """gets width property"""
 
         return self.__width
 
@@ -21,7 +21,7 @@ class Rectangle:
 
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if self.__width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
