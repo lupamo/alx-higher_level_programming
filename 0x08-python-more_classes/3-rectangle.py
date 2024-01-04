@@ -52,7 +52,6 @@ class Rectangle:
         str += "#" * self.width
         return str
 
-
     def area(self):
         """returns the area of the triangle"""
 
