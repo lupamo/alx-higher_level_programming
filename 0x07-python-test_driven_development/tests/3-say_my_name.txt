@@ -1,0 +1,32 @@
+checks if my say_my_name.py passes the test cases
+importing say_my_name
+====================
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+=====================
+test case 1: using first_name and last_name as strings
+
+>>> say_my_name("Arnold", "lupamo")
+My name is Arnold lupamo
+
+======================
+test case 2: using an integer as first_name and string as last_name
+
+>>> say_my_name(2, "jack")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+======================
+test case 3: using an integer as last_name and string as first_name
+
+>>> say_my_name("hallow", 5)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+======================
+test case 4: using an empty first_name and string as last_name
+
+>>> say_my_name("", "jack")
+My name is  jack
