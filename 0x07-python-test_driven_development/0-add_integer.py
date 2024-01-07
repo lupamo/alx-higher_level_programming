@@ -1,17 +1,22 @@
 #!/usr/bin/python3
-"""doctest for add function"""
+"""doctest for add function
+    checks if a is an integer or float
+    checks if b is also an integer or a float
+    Return: a + b
+"""
+
+
 def add_integer(a, b=98):
-    """testing a and b
-    >>> add_integer(2, 5)
-    7
-    >>> add_integer(6, -4)
-    2
-    >>> add_integer(10.5, 6)
-    16
-    """
+
+    """testing a and b"""
+
     if not isinstance(a, (int, float)):
+        """Raising an Error when a is not integer or float"""
+
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
+        """Raising an Error whan b is not an int or float"""
+
         raise TypeError("b must be an integer")
     a = int(a)
     b = int(b)

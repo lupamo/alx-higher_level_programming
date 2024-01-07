@@ -1,7 +1,58 @@
-#doctest for add function
->>> add_integer(2, 5)
-7
+module importing function:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+=================================
+testing case 1: when a and b are integers
+
+>>> add_integer(1, 2)
+3
+
+=================================
+testing case 2: when b is negative
+
 >>> add_integer(6, -4)
 2
+
+=================================
+testing case 3: when a is is a float
+
 >>> add_integer(10.5, 6)
 16
+
+=================================
+testing case 4: when b is not an integer
+
+>>> add_integer(2, "34")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+=================================
+testing case 5: when a is not an integer
+
+>>> add_integer("4", 65)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+=================================
+testing case 6: when a is negative
+
+>>> add_integer(-6, 4)
+-2
+
+=================================
+testing case 7: when a is a list
+
+>>> add_integer([8], 9)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+=================================
+testing case 8: when b is a list
+
+>>> add_integer(6, [56, 7, 5])
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
