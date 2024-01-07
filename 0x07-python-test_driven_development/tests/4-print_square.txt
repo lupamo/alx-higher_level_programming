@@ -1,0 +1,30 @@
+importing 4-print_square file
+
+>>> print_square = __import__('4-print_square').print_square
+
+=================================
+Test case 1: check if size is not integer
+
+>>> print_square("5")
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+==================================
+Test case 2: when size is a float and less than 0
+
+>>> print_square(-89.85)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+=====================================
+
+Test case 3: when size is less than 0
+
+>>> print_square(-8)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+=====================================
