@@ -8,6 +8,9 @@ Returns a sorted list of int
 class MyList(list):
     """instanciating"""
 
+    def __init__(self):
+        super().__init__()
+
     def print_sorted(self):
         """check if list is int"""
 
