@@ -11,6 +11,7 @@ def pascal_triangle(n):
     pascal triangle of size n
     returns a triangle
     """
+
     if n <= 0:
         return []
     p_triangle = [[1]]
