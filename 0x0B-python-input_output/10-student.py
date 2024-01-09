@@ -22,4 +22,4 @@ class Student():
         for key, value in new_dict.items():
             if key in attrs:
                 new_dict[key] = value
-            return new_dict
+        return new_dict
