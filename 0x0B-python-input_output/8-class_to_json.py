@@ -6,8 +6,7 @@
 """
 
 
-import json
-
-
 def class_to_json(obj):
+    """Returns an object description"""
+
     return obj.__dict__
