@@ -1,0 +1,10 @@
+importing class
+================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("mylist", 89)
+>>> bg.integer_validator("controler", "mike")
+Traceback (most recent call last):
+	...
+TypeError: controler must be an integer
