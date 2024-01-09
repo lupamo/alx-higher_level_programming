@@ -14,12 +14,13 @@ class Student():
 
     def to_json(self, attrs=None):
 
-        """turns a dictionary of student instance"""
-        new_dict = {}
+        """
+        retrives  dictionary of student instance
+        If attrs is a list of strings, only attribute names contained in this list must be retrieved
+        """
         new_dict = self.__dict__
-        if attrs is None:
-            return new_dict
-        for key, value in new_dict.items():
-            if key in attrs:
-                new_dict[key] = value
+        if type(attrs) is list and all(type(element)
+                                       is str for element in attrs):
+            return {key: getattr(self, key)
+                    for key in attrs if hasattr(self, key)}
         return new_dict
