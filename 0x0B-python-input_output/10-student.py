@@ -4,7 +4,7 @@ A class that defines a student
 """
 
 
-class Student:
+class Student():
     """initializing the class"""
 
     def __init__(self, first_name, last_name, age):
