@@ -16,7 +16,8 @@ class Student():
 
         """
         retrives  dictionary of student instance
-        If attrs is a list of strings, only attribute names contained in this list must be retrieved
+        If attrs is a list of strings, only attribute names contained
+        in this list must be retrieved
         """
         new_dict = self.__dict__
         if type(attrs) is list and all(type(element)
