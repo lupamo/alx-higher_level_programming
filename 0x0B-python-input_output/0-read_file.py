@@ -9,5 +9,4 @@ def read_file(filename=""):
     """Reads a file"""
 
     with open(f'{filename}', 'r', encoding="utf-8") as f:
-        file_read = f.read()
-    print(file_read)
+        print(f.read())
