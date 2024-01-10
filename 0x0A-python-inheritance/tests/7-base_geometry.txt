@@ -8,3 +8,8 @@ importing class
 Traceback (most recent call last):
 	...
 TypeError: controler must be an integer
+
+>>> bg.integer_validator("someone", 0)
+Traceback (most recent call last):
+	...
+ValueError: someone must be greater than 0
