@@ -17,12 +17,17 @@ class BaseGeometry:
     area instance method that raises an exception
     """
     def area(self):
+        """Raise exception"""
         raise Exception("area() is not implemented")
 
     """integer_validator method that validates value"""
     def integer_validator(self, name, value):
+        """
+        checks if value is appropriate
+        """
+
         if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
+            raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+            raise ValueError("{:s} must be greater than 0".format(name))
 
