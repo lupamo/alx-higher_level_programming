@@ -31,7 +31,9 @@ TypeError: list must be an integer
 
 
 >>> bg.integer_validator("boolee", True)
-
+Traceback (most recent call last):
+	...
+TypeError: boolee must be an integer
 
 >>> bg.integer_validator("Dict", {89: 'none', 7: 'occupied', 6: 'none'})
 Traceback (most recent call last):
