@@ -6,7 +6,10 @@ Returns, printed file
 
 
 def read_file(filename=""):
-    """Reads a file"""
+    """Reads a file
+    Args:
+    filename: the name of file to be read
+    """
 
     with open(f'{filename}', 'r', encoding="utf-8") as f:
         for line in f:
