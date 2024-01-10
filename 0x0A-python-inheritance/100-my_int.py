@@ -13,6 +13,6 @@ class MyInt(int):
 
         return not super().__eq__(equal)
 
-    def __eq__(self, equal):
+    def __ne__(self, equal):
         """Overides != operator to invert the behavior"""
         return not super().__ne__(equal)
