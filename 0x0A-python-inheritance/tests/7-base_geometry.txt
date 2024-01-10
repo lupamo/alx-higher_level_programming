@@ -38,7 +38,7 @@ Traceback (most recent call last):
 	...
 TypeError: Dict must be an integer
 
->>> bg.integer_validator("list", None)
+>>> bg.integer_validator("tupler", (7, 6))
 Traceback (most recent call last):
 	...
-TypeError: list must be an integer
+TypeError: tupler must be an integer
