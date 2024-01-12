@@ -4,15 +4,30 @@
 """
 Rectengle class which inherits from Base
 """
+
+
 from models.base import Base
 
 class Rectangle(Base):
+    """Base inherited by Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        instaciating rectangle
+        Args
+        width: private instance attribute
+        height: private instance attribute
+        x: private instance
+        y: private instance
+        id:inherited instance
+        """
+
         super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+
     @property
     def width(self):
         return self.__width
