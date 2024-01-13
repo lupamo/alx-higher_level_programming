@@ -24,10 +24,10 @@ class Rectangle(Base):
         """
 
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -41,7 +41,7 @@ class Rectangle(Base):
     def width(self, value):
         """method that modifies the width attribute"""
 
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("width must be an integer")
 
         if value <= 0:
@@ -60,7 +60,7 @@ class Rectangle(Base):
     def height(self, value):
         """method that modifies the height attribute"""
 
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -78,8 +78,10 @@ class Rectangle(Base):
         """modifies our private x attribute
         value: the value which x attribute is to be set to
         """
-        if not value < 0:
-            raise TypeError("x must be >= 0")
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
 
         self.__x = value
 
@@ -92,9 +94,12 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """modifies our private x attribute
-        value: the value which x attribute is to be set to
+        """modifies our private y attribute
+        value: the value which y attribute is to be set to
         """
+        if type(value) != int:
+            raise TypeError("y must be an integer")
         if value < 0:
-            raise TypeError("y must be >= 0")
+            raise ValueError("y must be >= 0")
+
         self.__y = value
