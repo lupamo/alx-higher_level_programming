@@ -41,7 +41,7 @@ class Rectangle(Base):
     def width(self, value):
         """method that modifies the width attribute"""
 
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
 
         if value <= 0:
@@ -60,7 +60,7 @@ class Rectangle(Base):
     def height(self, value):
         """method that modifies the height attribute"""
 
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -78,7 +78,7 @@ class Rectangle(Base):
         """modifies our private x attribute
         value: the value which x attribute is to be set to
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -97,9 +97,15 @@ class Rectangle(Base):
         """modifies our private y attribute
         value: the value which y attribute is to be set to
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    """Area method which returns area of a rectangle"""
+
+    def area(self):
+        """"returns area by multiplying width and height"""
+        return self.width * self.height
