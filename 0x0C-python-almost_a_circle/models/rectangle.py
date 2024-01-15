@@ -2,7 +2,7 @@
 
 
 """
-Rectengle class which inherits from Base
+Rectangle class which inherits from Base
 """
 
 
@@ -23,11 +23,11 @@ class Rectangle(Base):
         id:inherited instance
         """
 
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
         """The method prints out a rectangle with #"""
 
