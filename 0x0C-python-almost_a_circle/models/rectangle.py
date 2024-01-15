@@ -109,3 +109,19 @@ class Rectangle(Base):
     def area(self):
         """"returns area by multiplying width and height"""
         return self.width * self.height
+
+    """The method prints out a rectangle with #"""
+
+    def display(self):
+        if self.width == 0 or self.height == 0:
+            print("")
+        str = ""
+        for i in range(self.height - 1):
+            str += "#" * self.width + '\n'
+        str += "#" * self.width
+        print(str)
+
+    """Overiding The __str__ method"""
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
