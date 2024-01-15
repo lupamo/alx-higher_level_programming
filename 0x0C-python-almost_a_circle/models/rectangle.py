@@ -113,15 +113,12 @@ class Rectangle(Base):
     """The method prints out a rectangle with #"""
 
     def display(self):
-        if self.width == 0 or self.height == 0:
-            print("")
-        str = ""
-        for i in range(self.height - 1):
-            str += "#" * self.width + '\n'
-        str += "#" * self.width
-        print(str)
+        """Improving rectangle with x & y"""
+        print("\n"*self.x, end="")
+        for row in range(self.height):
+            print(" "*self.x + "#"*self.width)
 
     """Overiding The __str__ method"""
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.__x, self._y, self.width, self.height)
