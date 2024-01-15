@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Square class that inherits from Rectangle"""
-
-from models.base import Base
 from models.rectangle import Rectangle
 
 
@@ -34,5 +32,5 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.size)
