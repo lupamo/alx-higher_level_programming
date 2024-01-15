@@ -26,7 +26,7 @@ class Rectangle(Base):
     def display(self):
         """Improving rectangle with x & y"""
         print("\n"*self.x, end="")
-        for row in range(self.height):
+        for r2 in range(self.height):
             print(" "*self.x + "#"*self.width)
 
     def __str__(self):
