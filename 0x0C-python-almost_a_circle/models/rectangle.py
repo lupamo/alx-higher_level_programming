@@ -23,11 +23,11 @@ class Rectangle(Base):
         id:inherited instance
         """
 
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
         """The method prints out a rectangle with #"""
 
@@ -44,12 +44,12 @@ class Rectangle(Base):
 
     """Updating rectangle with args"""
     def update(self, *args, **kwargs):
-        args_attr = ["id", "size", "x", "y"]
+        attr = ["id", "size", "x", "y"]
 
         for i, value in enumerate(args):
-            if i > (len(args_attr) - 1):
+            if i > (len(attr) - 1):
                 break
-            setattr(self, args_attr[i], value)
+            setattr(self, attr[i], value)
         if len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
