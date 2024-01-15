@@ -28,13 +28,8 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    """Area method which returns area of a rectangle"""
 
-    def area(self):
-        """"returns area by multiplying width and height"""
-        return self.width * self.height
-
-    """The method prints out a rectangle with #"""
+        """The method prints out a rectangle with #"""
 
     def display(self):
         """Improving rectangle with x & y"""
@@ -58,6 +53,12 @@ class Rectangle(Base):
         if len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    """Area method which returns area of a rectangle"""
+
+    def area(self):
+        """"returns area by multiplying width and height"""
+        return self.width * self.height
 
     @property
     def width(self):
@@ -133,4 +134,3 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
-
