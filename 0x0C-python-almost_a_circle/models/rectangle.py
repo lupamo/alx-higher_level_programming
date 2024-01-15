@@ -28,6 +28,36 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+    """Area method which returns area of a rectangle"""
+
+    def area(self):
+        """"returns area by multiplying width and height"""
+        return self.width * self.height
+
+    """The method prints out a rectangle with #"""
+
+    def display(self):
+        """Improving rectangle with x & y"""
+        print("\n"*self.x, end="")
+        for row in range(self.height):
+            print(" "*self.x + "#"*self.width)
+
+    """Overiding The __str__ method"""
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.width, self.height)
+
+    """Updating rectangle with args"""
+    def update(self, *args, **kwargs):
+        args_attr = ["id", "size", "x", "y"]
+
+        for i, value in enumerate(args):
+            if i > (len(args_attr) - 1):
+                break
+            setattr(self, args_attr[i], value)
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     @property
     def width(self):
@@ -104,37 +134,3 @@ class Rectangle(Base):
 
         self.__y = value
 
-    """Area method which returns area of a rectangle"""
-
-    def area(self):
-        """"returns area by multiplying width and height"""
-        return self.width * self.height
-
-    """The method prints out a rectangle with #"""
-
-    def display(self):
-        """Improving rectangle with x & y"""
-        print("\n"*self.x, end="")
-        for row in range(self.height):
-            print(" "*self.x + "#"*self.width)
-
-    """Overiding The __str__ method"""
-    def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.width, self.height)
-
-    """Updating rectangle with args"""
-    def update(self, *args, **kwargs):
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
-        """updating attributes using keyword arguments"""
-        for key, value in kwargs.items():
-            setattr(self, key, value)
