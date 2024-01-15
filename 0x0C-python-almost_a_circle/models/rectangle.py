@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-
-
-"""
-Rectangle class which inherits from Base
-"""
-
-
+"""Rectangle class which inherits from Base"""
 from models.base import Base
 
 
@@ -29,21 +23,19 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-        """The method prints out a rectangle with #"""
-
     def display(self):
         """Improving rectangle with x & y"""
         print("\n"*self.x, end="")
         for row in range(self.height):
             print(" "*self.x + "#"*self.width)
 
-    """Overiding The __str__ method"""
     def __str__(self):
+        """Overiding The __str__ method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.width, self.height)
 
-    """Updating rectangle with args"""
     def update(self, *args, **kwargs):
+        """Updating rectangle with args"""
         attr = ["id", "size", "x", "y"]
 
         for i, value in enumerate(args):
@@ -54,10 +46,11 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    """Area method which returns area of a rectangle"""
-
     def area(self):
-        """"returns area by multiplying width and height"""
+        """"
+        returns area by multiplying width and height
+        Area method which returns area of a rectangle
+        """
         return self.width * self.height
 
     @property
