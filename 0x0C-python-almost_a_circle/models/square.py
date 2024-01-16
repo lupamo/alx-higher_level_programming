@@ -33,5 +33,6 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
+        """Overiding The __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.size)
