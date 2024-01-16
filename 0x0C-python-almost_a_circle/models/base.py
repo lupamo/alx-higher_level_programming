@@ -71,3 +71,18 @@ class Base():
         else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    @classmethod
+    def load_from_file(cls):
+        """Ït returns a list of instances"""
+        file_name = "{}.json".format(cls.__name__)
+        instance_lst = []
+        try:
+            with open(file_name, mode='r+', encoding='UTF-8') as file:
+                json_str = file.read()
+            obj_dict = cls.from_json_string(json_str)
+            for i in obj_dict:
+                instance_lst += [cls.create(**i)]
+        except FileNotFoundError:
+            pass
+        return instance_lst
