@@ -10,6 +10,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def update(self, *args, **kwargs):
+        """updates square with args and kwargs"""
         args_attr = ["id", "size", "x", "y"]
 
         for i, value in enumerate(args):
