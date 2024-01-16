@@ -2,6 +2,7 @@
 """Base class"""
 import json
 import os
+import csv
 
 
 class Base():
@@ -83,6 +84,31 @@ class Base():
             obj_dict = cls.from_json_string(json_str)
             for i in obj_dict:
                 instance_lst += [cls.create(**i)]
+        except FileNotFoundError:
+            pass
+        return instance_lst
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """"Seralizing and saving instances of CSV file."""
+        file_name = "{}.csv".format(cls.__name__)
+        with open(file_name, 'w', newline='') as file:
+            written = csv.writer(file)
+            for obj in list_objs:
+                written.writerow(obj.to_dictionary().values())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        file_name = "{}.csv".format(cls.__name__)
+        instance_lst = []
+        try:
+            with open(file_name, 'r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    obj_dict = dict(zip(cls.create().to_dictionary().keys(),
+                                        map(int, row)))
+                    instance_lst.append(cls.create(**obj_dict))
         except FileNotFoundError:
             pass
         return instance_lst
