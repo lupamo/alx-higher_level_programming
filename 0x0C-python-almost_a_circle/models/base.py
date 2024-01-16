@@ -51,3 +51,20 @@ class Base():
         if json_string is None:
             json_string = "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """it returns an instance with all attributes already set"""
+        dummy_instance = cls(1, 1)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
+    def update(self, *args, **kwargs):
+        """üpdates arg value with args or kwargs"""
+        if args:
+            arg = ["id", "width", "height", "x", "y"]
+            for i, value in enumerate(args):
+                setattr(self, arg[i], value)
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
