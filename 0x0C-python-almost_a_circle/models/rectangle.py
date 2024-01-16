@@ -23,6 +23,16 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """a dictionary representation of rectangle"""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
     def display(self):
         """Improving rectangle with x & y"""
         print("\n"*self.x, end="")
