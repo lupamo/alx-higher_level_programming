@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class"""
 import json
+import os
 
 
 class Base():
@@ -29,3 +30,17 @@ class Base():
         if list_dictionaries is None or len(list_dictionaries) == 0:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        file_n = "{}.json".format(cls.__name__)
+        objs_lst = []
+
+        if list_objs is not None:
+            for i in list_objs:
+                objs_lst += [i.to_dictionary()]
+
+        json_str = Base.to_json_string(objs_lst)
+        with open(file_n, mode='w+', encoding="UTF-8") as file:
+            file.write(json_str)
