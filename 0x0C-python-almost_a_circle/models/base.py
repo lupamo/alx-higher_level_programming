@@ -44,3 +44,10 @@ class Base():
         json_str = Base.to_json_string(objs_lst)
         with open(file_n, mode='w+', encoding="UTF-8") as file:
             file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None:
+            json_string = []
+        return json.loads(json_string)
