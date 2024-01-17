@@ -34,7 +34,7 @@ class Rectangle(Base):
         }
 
     def display(self):
-        """Improving rectangle with x & y"""
+        """Improving rectangle with y & x """
         print("\n"*self.x, end="")
         for r2 in range(self.height):
             print(" "*self.x + "#"*self.width)
@@ -45,7 +45,7 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.width, self.height)
 
     def update(self, *args, **kwargs):
-        """Updating rectangle with args"""
+        """Updating rectangle with args and kwargs"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
