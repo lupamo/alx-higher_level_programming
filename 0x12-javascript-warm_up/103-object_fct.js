@@ -4,7 +4,7 @@ const myObject = {
 	value: 12
   };
   console.log(myObject);
-  myObject.incur = {
+  myObject.incur() = {
     function() {
 	    myObject.value++;
     }
