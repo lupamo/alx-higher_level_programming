@@ -1,9 +1,10 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
-let arr = [];
-argv.forEach((val) => {
-  for (let i = 0; i <= val; i++){
-	arr.push(i);
-  }
-  console.log(arr[1]);
-});
+const nums = argv.slice(2).map(Number).filter(num => Number.isInteger(num));
+
+if (nums.length < 2) {
+  console.log('0');
+} else {
+  const sortedNums = numbers.sort((a, b) => b - a);
+  console.log(`${sortedNums[1]}`);
+}
