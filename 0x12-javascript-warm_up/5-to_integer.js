@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
-if (typeof(argv[1]) === Number) {
-  console.log(`My number: ${int(argv[1])}`);
+if (!isNaN(argv[1])) {
+  console.log(`My number: ${parseInt(argv[2], 10)}`);
 } else {
 	console.log('Not a number');
 }
