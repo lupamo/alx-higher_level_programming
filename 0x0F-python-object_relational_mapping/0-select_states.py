@@ -1,33 +1,36 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
+"""A query to recieve all records from MySQL state talbe"""
+if __name__ == '__main__':
+    import MySQLdb
+    from sys import argv
 
-"""A script that lists rows from a sql database"""
+    username, password, database = argv[1], argv[2], argv[3]
 
-db = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user='root',
-    passwd='root/root',
-    db='hbtn_0e_0_usa')
+    try:
+        db_connection = MySQLdb.connect(
+                host="localhost",
+                port=3306,
+                user=username,
+                passwd=password,
+                db=database)
+    except MySQLdb.Error as err:
+        print("Error: {}".format(err))
+        exit(1)
 
-"""creating a cursor object"""
+    cur = db_connection.cursor()
 
-cur = db.cursor()
-cur.execute("SELECT * FROM states ORDER BY id ASC")
+    """retriving record from state database"""
+    try:
+        cur.execute("SELECT * FROM states ORDER BY id ASC")
+        query_db = cur.fetchall()
+    except MySQLdb.Error as err:
+        print("Error executing query: {}".format(err))
+        cur.close()
+        db_connection.close()
+        exit(1)
 
-"""fetches rows in the table"""
+    for row in query_db:
+        print(row)
 
-rows = cur.fetchall()
-
-"""display rows in database"""
-
-for row in rows:
-    print(row)
-
-
-"""closing the cusor and db connection"""
-
-cur.close()
-db.close()
-
+    cur.close()
+    db_connection.close()
