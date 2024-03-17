@@ -30,9 +30,9 @@ if __name__ == '__main__':
         exit(1)
 
     for row in query_db:
-        nameOfstate = row[1]
+        state_id, nameOfstate = row[0], row[1]
         if nameOfstate.startswith("N"):
-            print(nameOfstate)
+            print("({}, '{}')".format(state_id, nameOfstate))
 
     cur.close()
     db_connection.close()
