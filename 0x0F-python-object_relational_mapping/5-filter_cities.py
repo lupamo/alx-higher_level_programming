@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """Module takes a state and lists it's cities"""
+
+
 if __name__ == '__main__':
     import MySQLdb
     from sys import argv
