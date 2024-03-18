@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+
 """Lists states from the database"""
+
+
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
