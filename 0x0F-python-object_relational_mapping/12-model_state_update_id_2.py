@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a module that changes the name of
+a module that updates the name of
 a State object from the database hbtn_0e_6_usa
 """
 
@@ -21,6 +21,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     with Session() as session:
-        change_state = session.query(State).filter_by(id=1).first()
+        change_state = session.query(State).filter_by(id=2).first()
         change_state.name = "New Mexico"
         session.commit()
