@@ -16,4 +16,4 @@ if __name__ == "__main__":
             body_decoded = body.decode("utf-8")
             print(body_decoded)
     except error.HTTPError as err:
-        print("{}".format(err.code))
+        print("Error code: {}".format(err.code))
