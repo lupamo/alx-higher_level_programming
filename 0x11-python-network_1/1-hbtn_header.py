@@ -10,7 +10,7 @@ import sys
 
 if len(sys.argv) < 1:
     print("No Url found")
-    
+
 url = sys.argv[1]
 r = urllib.request.urlopen(url)
 for header in r.getheaders():
