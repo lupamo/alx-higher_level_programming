@@ -11,7 +11,7 @@ if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
 
     v = {"q": q}
-    
+
     try:
         resp = requests.post(url, data=v)
         data = resp.json()
