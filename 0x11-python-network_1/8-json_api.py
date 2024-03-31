@@ -17,8 +17,8 @@ if __name__ == "__main__":
         data = resp.json()
 
         if data:
-            print("[{}] {}".format(data.get(id), data.get('name')))
+            print("[{}] {}".format(data.get('id'), data.get('name')))
         else:
             print("No result")
-    except (ValueError) as ecrr:
+    except (ValueError) as err:
         print("Not a valid JSON")
