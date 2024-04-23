@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 
-const fileRead = process.argv[1];
+const fileRead = process.argv[2];
 
 try {
   const data = fs.readFileSync(fileRead, 'utf-8');

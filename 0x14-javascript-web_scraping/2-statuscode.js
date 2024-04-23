@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 /** A script that displays status code of a Request**/
 
 const url = process.argv[2];
