@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const request = require('request');
-const fs = require('fs');
 
 /** a script that computes the number of tasks completed by user id.**/
 
@@ -17,7 +16,7 @@ request(url, function (error, response, body) {
     const todos = JSON.parse(body);
 
     todos.forEach(task => {
-      if (task.completed == true) {
+      if (task.completed === true) {
         const userId = task.userId;
         if (done[userId]) {
           done[userId]++;
