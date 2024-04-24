@@ -8,14 +8,14 @@ const fs = require('fs');
 const url = process.argv[2];
 const fn = process.argv[3];
 
-request.get(url, function(error, response, data) {
-	if (error){
-		console.error(error);
-	} else {
-		fs.writeFile(fn, data, 'utf-8', (err, res) => {
-			if (error){
-				console.log(error);
-			}
-		});
-	}
+request.get(url, function (error, response, data) {
+  if (error) {
+    console.error(error);
+  } else {
+    fs.writeFile(fn, data, 'utf-8', (err, res) => {
+      if (error) {
+        console.log(error);
+      }
+    });
+  }
 });

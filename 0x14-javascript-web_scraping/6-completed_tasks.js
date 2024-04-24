@@ -7,27 +7,27 @@ const fs = require('fs');
 
 const url = process.argv[2];
 
-request(url, function(error, response, body) {
-	if (error){
-		console.error(error);
-		return;
-	}
-	try {
-		const done = {};
-		const todos = JSON.parse(body);
+request(url, function (error, response, body) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  try {
+    const done = {};
+    const todos = JSON.parse(body);
 
-		todos.forEach(task => {
-			if (task.completed == true) {
-				const userId = task.userId;
-				if (done[userId]) {
-					done[userId]++;
-				} else {
-					done[userId] = 1;
-				}
-			}
-		});
-		console.log(done);
-	} catch (err) {
-		console.log(err);
-	}
+    todos.forEach(task => {
+      if (task.completed == true) {
+        const userId = task.userId;
+        if (done[userId]) {
+          done[userId]++;
+        } else {
+          done[userId] = 1;
+        }
+      }
+    });
+    console.log(done);
+  } catch (err) {
+    console.log(err);
+  }
 });
